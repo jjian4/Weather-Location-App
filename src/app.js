@@ -5,6 +5,8 @@ const forcast = require('./utils/forcast')
 const geocode = require('./utils/geocode')
 
 const app = express()
+//The port that Heroku provides
+const port = process.env.PORT || 3000
 
 // Define paths
 const publicDirPath = path.join(__dirname, '../public')
@@ -95,6 +97,6 @@ app.get("*", (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Port 3000 server is up.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
